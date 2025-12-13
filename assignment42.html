@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS & DOM Scenarios</title>
+</head>
+<body>
+
+    <p id="length"></p>
+    <p id="arrayItems"></p>
+    <p id="comparison"></p>
+    <p id="max"></p>
+
+    <script>
+        // Scenario 1: Count Number of Items in Array
+        let arr = [1, 2, 3, 4];
+        document.getElementById("length").innerText = "Array length: " + arr.length;
+
+        // Scenario 2: Loop Through Array
+        let output = "";
+        for (let i = 0; i < arr.length; i++) {
+            output += arr[i] + " ";
+        }
+        document.getElementById("arrayItems").innerText = "Array items: " + output;
+
+        // Scenario 3: Difference between == and ===
+        let x = 10;
+        let y = "10";
+
+        let result1 = (x == y);   // true (only value compared)
+        let result2 = (x === y);  // false (value + type compared)
+
+        document.getElementById("comparison").innerText =
+            "x == y : " + result1 + " | x === y : " + result2;
+
+        // Scenario 4: Find Maximum of Two Numbers
+        let a = 15;
+        let b = 20;
+
+        if (a > b) {
+            document.getElementById("max").innerText = "Maximum is: " + a;
+        } else {
+            document.getElementById("max").innerText = "Maximum is: " + b;
+        }
+    </script>
+
+</body>
+</html>
