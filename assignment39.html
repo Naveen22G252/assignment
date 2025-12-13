@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Practice Tasks</title>
+    <style>
+        #box, #card {
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px solid black;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Task 1: Change Text -->
+    <h2 id="head">Welcome</h2>
+    <button onclick="changeText()">Change Text</button>
+
+    <!-- Task 2: Change Color -->
+    <div id="box" onclick="changeColor()">Color Box</div>
+
+    <!-- Task 3: Image Swap -->
+    <img id="photo" src="https://via.placeholder.com/150" width="150">
+    <br>
+    <button onclick="changeImage()">Change Image</button>
+
+    <!-- Task 4: Show/Hide Paragraph -->
+    <p id="text">This is a secret message.</p>
+    <button onclick="hideText()">Hide</button>
+    <button onclick="showText()">Show</button>
+
+    <!-- Task 5: Add List Item -->
+    <ul id="list">
+        <li>Apple</li>
+        <li>Orange</li>
+    </ul>
+    <button onclick="addItem()">Add Mango</button>
+
+    <!-- Task 6: Change Style on Hover -->
+    <div id="card"
+         onmouseover="hoverIn()"
+         onmouseout="hoverOut()">
+         Hover Me!
+    </div>
+
+    <!-- Task 7: Input Display -->
+    <input type="text" id="inputText">
+    <button onclick="showInput()">Show Text</button>
+    <p id="output"></p>
+
+    <!-- Task 8: Count Clicks -->
+    <button onclick="countClick()">Click Me</button>
+    <p id="count">0</p>
+
+    <!-- Task 9: Dynamic Paragraph -->
+    <button onclick="addParagraph()">Add Paragraph</button>
+
+    <!-- Task 10: Style Toggle -->
+    <button onclick="toggleStyle()">Toggle Background</button>
+
+    <script>
+        // Task 1
+        function changeText() {
+            document.getElementById("head").innerText = "Hello Students!";
+        }
+
+        // Task 2
+        function changeColor() {
+            let box = document.getElementById("box");
+            box.style.backgroundColor = "yellow";
+            box.style.color = "red";
+        }
+
+        // Task 3
+        function changeImage() {
+            document.getElementById("photo").src = "https://via.placeholder.com/150/0000FF";
+        }
+
+        // Task 4
+        function hideText() {
+            document.getElementById("text").style.display = "none";
+        }
+        function showText() {
+            document.getElementById("text").style.display = "block";
+        }
+
+        // Task 5
+        function addItem() {
+            let li = document.createElement("li");
+            li.innerText = "Mango";
+            document.getElementById("list").appendChild(li);
+        }
+
+        // Task 6
+        function hoverIn() {
+            document.getElementById("card").style.backgroundColor = "green";
+        }
+        function hoverOut() {
+            document.getElementById("card").style.backgroundColor = "white";
+        }
+
+        // Task 7
+        function showInput() {
+            document.getElementById("output").innerText =
+                document.getElementById("inputText").value;
+        }
+
+        // Task 8
+        let clicks = 0;
+        function countClick() {
+            clicks++;
+            document.getElementById("count").innerText = clicks;
+        }
+
+        // Task 9
+        function addParagraph() {
+            let p = document.createElement("p");
+            p.innerText = "This is a new paragraph";
+            document.body.appendChild(p);
+        }
+
+        // Task 10
+        let isBlue = false;
+        function toggleStyle() {
+            document.body.style.backgroundColor = isBlue ? "white" : "blue";
+            isBlue = !isBlue;
+        }
+    </script>
+
+</body>
+</html>
