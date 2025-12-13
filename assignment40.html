@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Scenarios</title>
+</head>
+<body>
+
+    <!-- Scenario 1: Add Two Numbers -->
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="addNumbers()">Add</button>
+    <p id="result"></p>
+
+    <!-- Scenario 2: Check Even or Odd -->
+    <p id="evenodd"></p>
+
+    <!-- Scenario 3: Button Click Message -->
+    <button onclick="showAlert()">Click Me</button>
+
+    <!-- Scenario 4: Count Number of Items in Array -->
+    <p id="length"></p>
+
+    <!-- Scenario 5: Empty Field Validation -->
+    <input type="text" id="textBox" placeholder="Enter something">
+    <button onclick="checkEmpty()">Check</button>
+
+    <!-- Scenario 6: Change Text on Click -->
+    <p id="text">Hello</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        // Scenario 1
+        function addNumbers() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+            document.getElementById("result").innerText = a + b;
+        }
+
+        // Scenario 2
+        let number = 7;
+        if (number % 2 === 0) {
+            document.getElementById("evenodd").innerText = "Even";
+        } else {
+            document.getElementById("evenodd").innerText = "Odd";
+        }
+
+        // Scenario 3
+        function showAlert() {
+            alert("Button Clicked");
+        }
+
+        // Scenario 4
+        let arr = [1, 2, 3, 4];
+        document.getElementById("length").innerText = arr.length;
+
+        // Scenario 5
+        function checkEmpty() {
+            let value = document.getElementById("textBox").value;
+            if (value === "") {
+                alert("Field cannot be empty");
+            }
+        }
+
+        // Scenario 6
+        function changeText() {
+            document.getElementById("text").innerText = "Welcome";
+        }
+    </script>
+
+</body>
+</html>
